@@ -1,0 +1,13 @@
+@font-face {
+  font-family: 'Amatic';
+  src: url(/../../assets/amatic_sc/AmaticSC-Regular.ttf) format("truetype");
+  font-weight:300;
+}
+
+a {
+  color: #A80000;
+  padding: 10rem;
+  text-align: center;
+  text-decoration: none;
+  font-family: "Amatic", serif;
+}

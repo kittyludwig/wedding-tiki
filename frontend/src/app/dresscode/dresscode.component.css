@@ -1,0 +1,30 @@
+@font-face {
+  font-family: 'SulphurPoint';
+  src: url(/../../assets/sulphur_point/SulphurPoint-Regular.ttf) format("truetype");
+  font-weight:300;
+}
+@font-face {
+  font-family: 'AmaticSC';
+  src: url(/../../assets/amatic_sc/AmaticSC-Regular.ttf) format("truetype");
+  font-weight:300;
+}
+
+h2, h3, h4 {
+  text-align: center;
+  font-family: "AmaticSC", serif;
+}
+
+p {
+  font-family: 'SulphurPoint', serif;
+}
+
+.dresscode-vrouwen {
+  text-align: left;
+  width: 70%;
+}
+
+.dresscode-mannen {
+  text-align: right;
+  width: 70%;
+  margin-left: 10rem;
+}

@@ -1,0 +1,30 @@
+@font-face {
+  font-family: 'AmaticSC';
+  src: url(/../../assets/amatic_sc/AmaticSC-Regular.ttf) format("truetype");
+  font-weight:300;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+img {
+  flex: none;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  position: center;
+  display:block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h2 {
+  font-family: AmaticSC, serif;
+}
+
+p {
+  text-align: center;
+}
