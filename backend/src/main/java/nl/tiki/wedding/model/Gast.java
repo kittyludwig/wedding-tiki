@@ -14,12 +14,11 @@ public class Gast {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     @Column(nullable = false)
-    private String uniekeCode;
+    private String naam;
     @Column(nullable = false)
-    private String voornaam;
+    private String aanwezig;
     @Column(nullable = false)
-    private String achternaam;
-    private String emailAdres;
-    private boolean familie;
-    private boolean dagGast;
+    private String typeGast;
+    @Column(nullable = true)
+    private String logeren;
 }

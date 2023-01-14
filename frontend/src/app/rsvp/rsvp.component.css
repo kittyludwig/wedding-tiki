@@ -1,0 +1,10 @@
+p {
+  padding-top: 15px;
+  text-align: left;
+}
+
+.error {
+  color: #ef1111;
+  font-size: 12px;
+  padding-top: 2px;
+}

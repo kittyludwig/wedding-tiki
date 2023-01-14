@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'SulphurPoint';
-  src: url(/../assets/sulphur_point/SulphurPoint-light.ttf) format("truetype");
+  src: url(/../assets/sulphur_point/SulphurPoint-Regular.ttf) format("truetype");
   font-weight:300;
 }
 @font-face {
@@ -12,6 +12,10 @@
 .header {
   margin-left: auto;
   margin-right: auto;
+  width: 100%;
+}
+
+.header.is-geen-telefoon {
   width: 40rem;
 }
 
@@ -25,25 +29,38 @@
 .page {
   margin-left: auto;
   margin-right: auto;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.page.is-geen-telefoon {
   width: 40rem;
-  height: 4rem;
-}
-
-h2, h3, h4 {
-  font-family: "AmaticSC", serif;
-}
-
-p {
-  font-family: 'SulphurPoint', serif;
 }
 
 .img-wrapper {
-  max-height: 340px;
   overflow: hidden;
 }
 
-img {
-  margin-top: -130px;
+.img-wrapper.is-geen-telefoon {
   padding-left: 12rem;
   padding-right: 12rem;
+}
+
+.footer-wrapper {
+  width: 100%;
+  bottom: 0;
+  display: block;
+  text-align: center;
+  background: radial-gradient(transparent 20%, white 70%);
+  padding-top: 10px;
+}
+
+.footer-img {
+  margin: 0 auto !important;
+  display: block;
+  width: 100%;
+}
+
+img {
+  text-align: center;
 }

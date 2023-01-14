@@ -1,71 +1,85 @@
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
 @font-face {
-  font-family: 'SulphurPoint';
-  src: url(/assets/sulphur_point/SulphurPoint-Regular.ttf) format("truetype");
-  font-weight:300;
+  font-family: 'Comfortaa';
+  src: url(/assets/comfortaa/Comfortaa-VariableFont_wght.ttf) format("truetype");
+  font-weight: 300;
 }
+
 @font-face {
-  font-family: 'AmaticSC';
-  src: url(/assets/amatic_sc/AmaticSC-Regular.ttf) format("truetype");
-  font-weight:300;
+  font-family: 'Spectacular-signature';
+  src: url(/assets/spectacular_signature/FontsFree-Net-SpectacularSignature.ttf) format("truetype");
+  font-weight: 500;
 }
 
 h1 {
-  color: #369;
-  font-family: "AmaticSC", serif;
+  color: #68ad73;
+  font-family: Spectacular-signature, serif !important;
   text-align: center;
+  font-size: 65px !important;
+  padding-top: 15px;
 
 }
-h2, h3 {
-  color: #444;
-  font-family: AmaticSC, sans-serif;
-  font-weight: lighter;
+
+h2 {
+  color: #30562d;
+  font-family: Spectacular-signature, serif !important;
+  text-align: center;
+  font-size: 45px !important;
+  padding-top: 10px;
 }
+
+h3 {
+  color: #598856;
+  font-family: Spectacular-signature, serif !important;
+  text-align: center;
+  font-size: 40px !important;
+  padding-top: 10px;
+}
+
 p {
-  font-family: SulphurPoint, serif;
+  font-family: "Comfortaa", serif;
 }
+
 a {
-  font-family: AmaticSC, sans-serif;
-  font-weight: bold;
-  color: #525252;
-  text-decoration: none;
+  font-family: "Comfortaa", serif;
+  color: #598856 !important;
+  text-decoration: none !important;
 }
+
 body {
   margin: 2em;
+  text-align: center;
 }
-body, input[type="text"], button {
-  color: #333;
-  font-family: Cambria, Georgia, serif;
-}
+
+
 button {
-  background-color: #eee;
+  background-color: #396b33;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  color: black;
+  color: #2d542a;
   font-size: 1.2rem;
   padding: 1rem;
   margin-right: 1rem;
   margin-bottom: 1rem;
   margin-top: 1rem;
 }
+
 button:hover {
   background-color: black;
   color: white;
 }
+
 button:disabled {
   background-color: #eee;
   color: #aaa;
   cursor: auto;
 }
 
-a {
-  text-decoration: none;
-}
-
 /* everywhere else */
 * {
-  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

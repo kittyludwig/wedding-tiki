@@ -1,7 +1,124 @@
-<p>rsvp works!</p>
+<h2>Aanmelden</h2>
+<p>Laat via het onderstaande formulier weten dat je erbij bent! En geef ons direct wat meer informatie!</p>
 
-<p>Voornaam is: {{gast?.voornaam}}</p>
+<form [formGroup]="rsvpForm" (ngSubmit)="onSubmit()">
+  <div class="text-left">
+    <mat-card-content>
+      <p>Mijn naam is</p>
+      <mat-form-field class="example-full-width">
+        <mat-label>Voornaam achternaam</mat-label>
+        <input matNativeControl
+               type="text"
+               id="naam"
+               name="naam"
+               [formControlName]="'naam'"
+               [(ngModel)]="rsvp.naam">
+      </mat-form-field>
+      <p class="error" *ngIf="(!valideForm && !this.rsvpForm.controls['naam'].touched) ||
+(this.rsvpForm.controls['naam'].touched && this.rsvpForm.controls['naam'].errors?.['required'])">
+        Dit veld is verplicht, vul het aub in
+      </p>
+    </mat-card-content>
 
-<div *ngIf=gast?.familie>
-<p>Test tekst</p>
-</div>
+    <mat-card-content>
+      <p>Laten we maar beginnen met het volgende</p>
+      <mat-radio-group
+        (change)="wijzigBijAanmelding()"
+        [formControlName]="'aanmelding'"
+        [(ngModel)]="rsvp.aanmelding">
+        <mat-radio-button value="ja"><p class="pt-3">Ja ik ben aanwezig op jullie bruiloft!</p></mat-radio-button>
+        <br>
+        <mat-radio-button value="nee"><p class="pt-3">Balen, ik kan helaas niet. </p></mat-radio-button>
+      </mat-radio-group>
+      <p class="error" *ngIf="(!valideForm && !this.rsvpForm.controls['aanmelding'].dirty) ||
+(this.rsvpForm.controls['aanmelding'].touched && this.rsvpForm.controls['aanmelding'].errors?.['required'])">
+        Dit veld is verplicht, maak een keuze aub
+      </p>
+    </mat-card-content>
+
+    <div class="text-left" *ngIf="wilAanmelden">
+      <mat-card-content>
+        <p>Geef ons door of je wilt blijven slapen</p>
+        <mat-radio-group aria-label="Maak je keuze"
+                         [formControlName]="'logeren'"
+                         [(ngModel)]="rsvp.logeren">
+          <mat-radio-button value="ja"><p class="pt-3">Ja dat wil ik!</p></mat-radio-button>
+          <br>
+          <mat-radio-button value="nee"><p class="pt-3">Nee bedankt, ik regel zelf wat.</p></mat-radio-button>
+        </mat-radio-group>
+        <p class="error" *ngIf="(!valideForm && !this.rsvpForm.controls['logeren'].dirty) ||
+(this.rsvpForm.controls['logeren'].touched && this.rsvpForm.controls['logeren'].errors?.['required'])">
+          Dit veld is verplicht, maak een keuze aub
+        </p>
+      </mat-card-content>
+
+      <mat-card-content>
+        <p>Geef ons door of je vegetarisch wilt eten</p>
+        <mat-radio-group
+          [formControlName]="'vegetarisch'"
+          [(ngModel)]="rsvp.vegetarisch">
+          <mat-radio-button value="ja"><p class="pt-3">Ja graag vegetarisch</p></mat-radio-button>
+          <br>
+          <mat-radio-button value="nee"><p class="pt-3">Team vlees!</p></mat-radio-button>
+        </mat-radio-group>
+        <p class="error" *ngIf="(!valideForm && !this.rsvpForm.controls['vegetarisch'].dirty) ||
+(this.rsvpForm.controls['vegetarisch'].touched && this.rsvpForm.controls['vegetarisch'].errors?.['required'])">
+          Dit veld is verplicht, maak een keuze aub
+        </p>
+      </mat-card-content>
+
+      <mat-card-content>
+        <p>Geef door waar wij verder rekening mee kunnen houden</p>
+        <mat-form-field class="example-full-width">
+          <mat-label>Allergiën</mat-label>
+          <input matNativeControl
+                 type="text"
+                 name="allergie"
+                 [formControlName]="'allergie'"
+                 [(ngModel)]="rsvp.allergie">
+        </mat-form-field>
+      </mat-card-content>
+
+      <p>Heb je een verzoeknummer voor het feest? Geef het hieronder door!</p>
+      <div class="grid">
+        <div class="col">
+          <mat-card-content>
+            <mat-form-field class="example-full-width">
+              <mat-label>Titel verzoeknummer</mat-label>
+              <input matNativeControl
+                     type="text"
+                     name="titel-verzoek"
+                     (change)="wijzigBijVerzoekartiest()"
+                     [formControlName]="'verzoekTitel'"
+                     [(ngModel)]="rsvp.verzoekTitel">
+            </mat-form-field>
+            <p class="error" *ngIf="this.rsvpForm.controls['verzoekTitel'].errors?.['required']">
+              Dit veld is verplicht, vul het aub in
+            </p>
+          </mat-card-content>
+        </div>
+
+        <div class="col">
+          <mat-card-content>
+            <mat-form-field class="example-full-width">
+              <mat-label>Artiest verzoeknummer</mat-label>
+              <input matNativeControl
+                     type="text"
+                     name="artiest-verzoek"
+                     (change)="wijzigBijVerzoektitel()"
+                     [formControlName]="'verzoekArtiest'"
+                     [(ngModel)]="rsvp.verzoekArtiest">
+            </mat-form-field>
+            <p class="error" *ngIf="this.rsvpForm.controls['verzoekArtiest'].errors?.['required']">
+              Dit veld is verplicht, vul het aub in
+            </p>
+          </mat-card-content>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="example-button-row">
+    <button mat-raised-button type="submit">Opslaan</button>
+  </div>
+</form>
+

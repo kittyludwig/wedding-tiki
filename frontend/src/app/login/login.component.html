@@ -1,0 +1,24 @@
+<div class="container pb-2">
+  <div class="col-md-6 col-md-offset-3 loginBox"><h3>Log In</h3>
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+      <mat-form-field class="example-full-width">
+        <mat-label>Gebruikersnaam</mat-label>
+        <input matNativeControl
+               id="username"
+               type="text"
+               [formControlName]="'userid'"/>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Wachtwoord</mat-label>
+        <input matNativeControl
+               id="password"
+               type="password"
+               [formControlName]="'password'"/>
+      </mat-form-field>
+      <p>{{message}}</p>
+      <div class="col-xs-12 form-group text-right">
+        <button mat-raised-button type="submit">Login</button>
+      </div>
+    </form>
+  </div>
+</div>

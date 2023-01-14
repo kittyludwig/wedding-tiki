@@ -1,24 +1,23 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {HomeComponent} from "./dashboard/home.component";
-import {DresscodeComponent} from "./dresscode/dresscode.component";
-import {DieetwensenComponent} from "./dieetwensen/dieetwensen.component";
-import {RsvpComponent} from "./rsvp/rsvp.component";
+import {FaqComponent} from "./faq/faq.component";
 import {LocatieComponent} from "./locatie/locatie.component";
-import {ProgrammaDagComponent} from "./programma-dag/programma-dag.component";
-import {OvernachtingFamilieComponent} from "./overnachting-familie/overnachting-familie.component";
+import {ProgrammaComponent} from "./programma/programma.component";
+import {OvernachtingComponent} from "./overnachting/overnachting.component";
 import {ContactComponent} from "./contact/contact.component";
+import {RsvpComponent} from "./rsvp/rsvp.component";
+import {LoginComponent} from "./login/login.component";
+import {AuthGuard} from "../guards/auth.guard";
 
 const routes: Routes = [
+  {path: 'login', component: LoginComponent},
+  {path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
   {path: '', redirectTo: '/home', pathMatch: 'full'},
-  {path: 'home', component: HomeComponent},
-  // {path: 'gasten', component: GastenComponent},
-  // {path: 'detail/:id', component: GastenDetailComponent},
-  {path: 'programma-dag', component: ProgrammaDagComponent},
-  {path: 'overnachting-fam', component: OvernachtingFamilieComponent},
-  {path: 'dresscode', component: DresscodeComponent},
-  {path: 'dieetwensen', component: DieetwensenComponent},
-  // {path: 'rsvp', component: RsvpComponent},
+  {path: 'programma-dag', component: ProgrammaComponent},
+  {path: 'overnachting-fam', component: OvernachtingComponent},
+  {path: 'dresscode', component: FaqComponent},
+  {path: 'rsvp', component: RsvpComponent},
   {path: 'locatie', component: LocatieComponent},
   {path: 'contact', component: ContactComponent}
 ];
